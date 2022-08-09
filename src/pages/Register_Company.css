@@ -1,0 +1,133 @@
+.rcmain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    font-weight: bold;
+}
+
+.rcup ,.rcdown{
+    height: 50%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid rgb(114, 114, 114);
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.rcmain form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.rcmain form div{
+    margin-top: 15px;
+}
+
+
+.rcdown form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rcinp{
+    width: 250px;
+    height: 35px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding-left: 10px;
+    
+}
+
+
+button{
+    width: 150px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(42, 127, 232);
+    color: white;
+    cursor: pointer;
+
+}
+
+.mnftmain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.mnftmain form {
+    text-align: center;
+}
+
+
+.mnftmain form button{
+    margin-top: 20px;
+}
+
+.mnftmain form div{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qrmain{
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.qrstyle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.productdetail{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.productdetail p{
+    font-weight: bold;
+    
+}
+
+.productdetail h2{
+    color: rgb(75, 75, 72);
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 2px 2px 10px black;
+}
+
+.vrify{
+    margin-top: -50px;
+}
