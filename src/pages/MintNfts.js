@@ -113,7 +113,7 @@ const MintNfts = ({ qrurllist }) => {
       <ToastContainer />
       {isLoading ? <LoadingSpinner /> :
         <div className='mnftmain'>
-          <h2>Mint MintNfts</h2>
+          <h2>MintNfts</h2>
 
 
           <form onSubmit={handleSubmit2}>

@@ -12,7 +12,7 @@ const Productdetail = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    console.log(window.location.href)
+    
     const query = (window.location.href).substring((window.location.href).indexOf('?') + 1);
     console.log(query)
     async function fetchData() {
@@ -29,6 +29,7 @@ const Productdetail = () => {
       }
       console.log(nft)
       await setnft(nft)
+      
     }
     try {
       fetchData()
