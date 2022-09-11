@@ -1,31 +1,28 @@
-import {
-    NavLink
-} from "react-router-dom";
-import { Navbar, Nav, Button, Container } from 'react-bootstrap'
+import { NavLink } from "react-router-dom";
 import './Nav.css'
 import logoUrl from '../logonft.jpg'
-import Web3 from "web3";
+
 import { useEffect, useState } from "react";
 
 
 const Navigation = () => {
     const [account, setAccount] = useState('Connect Wallet')
 
-    useEffect(()=>{
+    useEffect(() => {
         web3Handler()
     })
 
-    const web3Handler=async()=>{
-    
-       await  window.web3.currentProvider.request({method:'eth_requestAccounts'}).then(accounts=>{
-        setAccount(accounts[0]);
-        }).catch(()=>{
+    const web3Handler = async () => {
+
+        await window.web3.currentProvider.request({ method: 'eth_requestAccounts' }).then(accounts => {
+            setAccount(accounts[0]);
+        }).catch(() => {
             setAccount('Connect Wallet')
         })
 
     }
 
-   
+
 
     return (
 
@@ -33,8 +30,8 @@ const Navigation = () => {
             <input type="checkbox" id="nav-check" />
             <div className="nav-header">
                 <div className="nav-title">
-                <img width="50px"  src={logoUrl}></img>
-                    
+                    <img width="50px" src={logoUrl}></img>
+
                 </div>
             </div>
             <div className="nav-btn">
@@ -46,21 +43,77 @@ const Navigation = () => {
             </div>
 
             <div className="nav-links">
+                <NavLink to="/" >
+                    Home
+                </NavLink>
+                <div className="dropdown">
+                    <div className="dropbtn">Admin</div>
+                    <div className="dropdown-content">
+                        <NavLink to="/registercompany" >
+                            Register Company
+                        </NavLink>
+
+                    </div>
+                </div>
+                <div className="dropdown">
+                    <div className="dropbtn">Company</div>
+                    <div className="dropdown-content">
+                        <NavLink to="/mintnfts" >
+                            Mint Nfts
+                        </NavLink>
+                        <NavLink to="/qrlist" >
+                            QR List
+                        </NavLink>
+                    </div>
+                </div>
+                <div className="dropdown">
+                    <div className="dropbtn">Customer</div>
+                    <div className="dropdown-content">
+                        <NavLink to="/userpanel" >
+                            UserPanel
+                        </NavLink>
+
+                        {/* <NavLink to="/userproduct" >
+                            UserProduct
+                        </NavLink> */}
+
+                        <NavLink to="/idtoproduct" >
+                            Product Detail
+                        </NavLink>
+                        <NavLink to="/startwarranty" >
+                            Start Warranty
+                        </NavLink>
+                    </div>
+                </div>
+                {/* <NavLink to="/userpanel" >
+                    UserPanel
+                </NavLink>
+
+                <NavLink to="/userproduct" >
+                    UserProduct
+                </NavLink>
+
+                <NavLink to="/idtoproduct" >
+                    Product Detail
+                </NavLink>
+
                 <NavLink to="/registercompany" >
                     Register Company
+                </NavLink>
+                <NavLink to="/startwarranty" >
+                    Start Warranty
                 </NavLink>
                 <NavLink to="/mintnfts" >
                     Mint Nfts
                 </NavLink>
                 <NavLink to="/qrlist" >
                     QR List
-                </NavLink>
-                 
-                        <button onClick={web3Handler} className="walletbtn">
-                            {account.slice(0, 5) + '...' + account.slice(38, 42)}
-                        </button>
-                       
-                   
+                </NavLink> */}
+
+                <button onClick={web3Handler} className="walletbtn">
+                    {account.slice(0, 5) + '...' + account.slice(38, 42)}
+                </button>
+
             </div>
         </div>
 
