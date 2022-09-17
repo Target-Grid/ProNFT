@@ -12,8 +12,8 @@ import { create } from "ipfs-http-client";
 // export default ipfs;
 // const ipfsClient = require("ipfs-http-client");
 
-const projectId = '2Df7j3ThkI59GNuIMAlpAcGrGMF'
-const projectSecret = '40c8c19f781f0ecede5a8221e2a5b0fc'
+const projectId = '2Ebw5MfTDn4ESiQmsEo9fImoRFV'
+const projectSecret = '0647d865aa3da9e3db4e6cd5bbd0d430'
 
 
 

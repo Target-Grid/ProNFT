@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../App.css";
+import frontpage from './front-page.jpg'
+
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Home = () => {
@@ -37,7 +39,8 @@ const Home = () => {
         </SwiperSlide>
 
       </Swiper> */}
-      <h3 className="homeh3">What You Are :-</h3>
+      <h3 className="homeh3">Blockchain - Based eCommerce product verification and warranty management system</h3>
+      <img src={frontpage} alt="home-img" width="100%" height="50%"></img>
       {/* <div className="homegrid">
         <div className="item1"><button>Customer</button></div>
         <div className="item2"><button>Company</button></div>

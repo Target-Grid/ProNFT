@@ -2,7 +2,7 @@ import '../App.css'
 import React from 'react';
 import { loadBlockchain } from '../components/BlockchainLoad';
 import { useState, useEffect } from 'react';
-import jewellery from './jewellery2.jpg'
+import verify from './varified.png'
 import LoadingSpinner from '../components/LoadingSpinner';
 import { useLocation } from 'react-router-dom';
 
@@ -13,8 +13,8 @@ const UserProduct = () => {
   const location = useLocation();
 
 
-  const getdate=(t)=>{
-    return new Date(t*1000);
+  const getdate = (t) => {
+    return new Date(t * 1000);
   }
 
 
@@ -35,7 +35,7 @@ const UserProduct = () => {
         date: nftret.starttime,
         status: nftret.warrantystatus
       }
-     
+
       setnft(nft)
       console.log(nft)
     }
@@ -47,40 +47,41 @@ const UserProduct = () => {
     }
     setIsLoading(false)
   }, [])
-  const now = new Date() 
+  const now = new Date()
   const [isLoading, setIsLoading] = useState(true);
   const [nft, setnft] = useState({ id: '', name: '', cat: '', minter: '', imghash: '', duration: 0, date: '', status: false })
 
   return (
     <>
       {isLoading ? <LoadingSpinner /> :
-          
+
         <div className='productMain'>
-          <div className="cards">
-            <div className="card">
-              {/* <img src={'https://www.volusion.com/blog/content/images/2021/09/Product-Photography.jpeg'} alt="" /> */}
-              <img src={`https://infura-ipfs.io/ipfs/${nft.imghash}`}></img>
-              <div className="detail">
-                <h4 className='title'>Product ID: {nft.id}</h4>
-                <h3 className='price'>   {nft.name} <span> <i> ({nft.cat})</i></span> </h3>
-                <h4 className='company'> Minter : {nft.minter}</h4>
-                <h4 className='address'> Warranty Duration: {nft.duration} <i>days</i></h4>
-                <h4 className='address'> Warranty Start Date :{nft.date>0? <i>{getdate(nft.date).toLocaleString()} </i>:<i>Not Started Yet</i>}</h4>
-                <h4 className='address'> Warranty status : {(nft.date===0)?<i>Not Started</i>:(((now.getTime()-nft.date)/86400000) >= nft.duration)?<i>Active</i>:<i>Expired</i>}</h4>
-                
+
+          <div className='imageSection'>
+            <img className='pd' src={`https://infura-ipfs.io/ipfs/${nft.imghash}`} />
+            <img className='varify' src={verify} />
+          </div>
+          <div className='detailSection'>
+            <div className='innersection'>
+              <div className='innersectionchild' >
+                <h4 >Product ID: <span>{nft.id}</span> </h4>
+                <h3 >   {nft.name} : <span> <span>{nft.cat}</span></span> </h3>
+                <h4 > Minter : <span>{nft.minter}</span></h4>
+                <h4 > Warranty Duration: <span>{nft.duration} days</span></h4>
+                <h4 > Warranty Start Date :{nft.date > 0 ? <i>{getdate(nft.date).toLocaleString()} '(MM/DD/YYYY)' </i> : <i>Not Started Yet</i>}</h4>
+                {/* <h4 > Warranty status : {(nft.date === 0) ? <i>Not Started</i> : (((now.getTime() - nft.date) / 86400000) >= nft.duration) ? <i style={{color:"green"}}>Active</i> : <i style={{color:"red"}}>Expired</i>}</h4> */}
+                <h4>Warranty Status : {nft.date==0?<b style={{color:"yellow"}}> Not Started Yet</b>:
+         (((Math.round(Date.now() / 1000)- nft.date) / 86400) >= nft.duration)?<b style={{color:"red"}} >Expired</b>:<b style={{color:"green"}}>Active</b>
+                }
+         </h4>
               </div>
-              <div className='share'>
-                
-              </div>
-              <div className="faltu"></div>
             </div>
-
-
           </div>
         </div>
-        }
+      }
     </>
   )
 }
-
+//1662907279
+//1662907772582
 export default UserProduct
